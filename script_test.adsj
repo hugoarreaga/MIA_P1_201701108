@@ -1,0 +1,45 @@
+
+
+#Crea un disco de 3000 Kb en la carpeta home
+mkdisk -size=3000 -unit=K -path=test/Disco1.dsk
+#Crea disco "Disco2.dsk"
+mkdisk -path=test/Disco2.dsk -unit=K -size=3000
+#Se crear disco "Disco3.dsk"
+mkdisk -size=5 -unit=M -path="test/Disco3.dsk"
+#Creará un disco de 10 Mb Disco4.DSK
+mkdisk -size=10 -path="test/Disco4.dsk"
+
+# COMandos de particion ------------------------------
+# COMandos de particion ------------------------------
+# COMandos de particion ------------------------------
+
+#Crea una partición primaria llamada Particion1 de 300 kbcon el peor ajuste en el disco Disco1.dsk
+fdisk -size=300 -path=test/Disco1.dsk -name=Particion1
+
+#Crea una partición primaria llamada Particion1 de 300 kbcon el peor ajuste en el disco Disco1.dsk
+fdisk -size=300 -path=test/Disco1.dsk -name=Particion1
+
+
+#Crea una partición logica llamada Particion1 de 300 kbcon el peor ajuste en el disco Disco1.dsk
+#fdisk -size=300 -path=test/Disco1.dsk -name=Particion1 -type=L
+
+
+#Crea una partición extendida llamada Particion1 de 300 kbcon el peor ajuste en el disco Disco1.dsk
+#fdisk -size=300 -path=test/Disco1.dsk -name=Particion1 -type=E
+
+#Crea una partición extendida llamada Particion1 de 300 kbcon el peor ajuste en el disco Disco1.dsk
+#fdisk -size=300 -path=test/Disco1.dsk -name=Particion1 -type=e
+
+
+#Crea una partición extendida dentro de Disco2 de 300 kb Tiene el peor ajuste
+#fdisk -type=L -path=tesst/Disco2.dsk -unit=K -name=Particion2 -size=300
+
+
+#Elimina con rmdisk Disco4.dsk
+#rmdisk -path="test/Discdo4.dsk"
+
+#Crea una partición lógica con el mejor ajuste, llamada Partición 3, de 1 Mb en el Disco3
+#fdisk -size=1 -type=L -unit=M -fit=bf -path="/mis discos/Disco3.dsk" -name="Particion3"
+
+#Intenta crear una partición extendida dentro de Disco2 de 200 kb Debería mostrar error ya que ya existe una partición extendida dentro de Disco2
+#fdisk -type=E -path=/home/Disco2.dsk -name=Part3 -unit=K -size=200
